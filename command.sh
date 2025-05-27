@@ -22,7 +22,8 @@ gh repo create propeller-app --public --source=. --remote=origin --push
 # Step 4
 git checkout -b update_logo
 
-# Step 5 (manual changes to src/App.js)
+sed -i "" 's|img src={logo}|img src="https://www.propelleraero.com/wp-content/uploads/2021/05/Vector.svg"|g' src/App.js
+sed -i "" 's|href="https://reactjs.org"|href="https://www.propelleraero.com/dirtmate/"|g' src/App.
 
 # Step 6
 git add src/App.js
@@ -35,4 +36,4 @@ gh pr create --base master --head update_logo --title "Update logo and link" --b
 # Step 8
 gh pr merge --merge
 
-# REPO_URL <https://github.com/GiftM5/propeller-app/tree/master>
+# REPO_URL https://github.com/GiftM5/propeller-app/tree/master
